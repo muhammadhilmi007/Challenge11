@@ -3,20 +3,17 @@
         {
             "id": 1,
             "pertanyaan": "siapa presiden indonesia?",
-            "tebakan": "jokowi",
-            "spill": "nama presiden ke 8"
+            "tebakan": "jokowi"
         },
         {
             "id": 2,
             "pertanyaan": "kapan indonesia merdeka",
-            "tebakan": "1945",
-            "spill": "setelah perang ke 2"
+            "tebakan": "1945"
         },
         {
             "id": 3,
             "pertanyaan": "Sebutkan kota yang memiliki julukan kota intan?",
-            "tebakan": "garut",
-            "spill": "kota sebelah bandung"
+            "tebakan": "garut"
         }
     ]
 }
