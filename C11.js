@@ -54,7 +54,7 @@ function cekJawaban(input) {
     pertanyaanSelanjutnya();
   } else {
     console.log(`Wwkwkwk, Anda Kurang beruntung!`);
-    tampilkanPertanyaan();
+    // tampilkanPertanyaan();
   }
   return;
 }
