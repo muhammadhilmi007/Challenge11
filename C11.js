@@ -12,10 +12,13 @@ const fs = require("fs");
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
+  prompt: "Tebakan: ",
 });
 
 let pertanyaans = [];
 let cariIndex = 0;
+
+rl.prompt();
 
 function bacaPertanyaan() {
   try {
@@ -35,12 +38,7 @@ function tampilkanPertanyaan() {
     akhirPermainan();
     return;
   }
-
-  console.log(`Pertanyaan ${cariIndex + 1} dari ${pertanyaans.length}`);
-  console.log(`------------------------------------------`);
-  console.log(pertanyaans[cariIndex].pertanyaan);
-  console.log(`------------------------------------------`);
-  console.log(`Ketik "keluar" untuk keluar`);
+  console.log("Pertanyaan:", pertanyaans[cariIndex].pertanyaan);
 }
 
 function cekJawaban(input) {
@@ -55,12 +53,10 @@ function cekJawaban(input) {
     console.log(`Selamat! Anda Benar!`);
     pertanyaanSelanjutnya();
   } else {
-    console.log(
-      `Wwkwkwk, Anda Kurang beruntung!, jawaban yang benar adalah: `,
-      jawabanBenar
-    );
-    pertanyaanSelanjutnya();
+    console.log(`Wwkwkwk, Anda Kurang beruntung!`);
+    tampilkanPertanyaan();
   }
+  return;
 }
 
 function pertanyaanSelanjutnya() {
@@ -73,16 +69,14 @@ function pertanyaanSelanjutnya() {
 }
 
 function akhirPermainan() {
-  console.log(`===========PERMAINAN BERAKHIR================`);
-  console.log(`Pertanyaan dijawab: ${cariIndex}`);
-  console.log(`=============================================`);
+  console.log(`Hore Anda Menang!`);
   rl.close();
 }
 
 function mulaiPermainan() {
-  console.log(`=== SELAMAT DATANG DI PERMAINAN TEBAK KATA ===`);
-  console.log(`Silahkan isi dengan Jawaban yang benar ya!`);
-  console.log(`===========================================`);
+  console.log(
+    `Selamat datang di permainan Tebak Kata, Silahkan isi dengan Jawaban yang benar ya!`
+  );
 
   bacaPertanyaan();
 
@@ -90,6 +84,7 @@ function mulaiPermainan() {
 }
 
 mulaiPermainan();
+rl.prompt();
 
 rl.on("line", (input) => {
   const bersihkanInputan = input.trim().toLowerCase();
