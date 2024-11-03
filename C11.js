@@ -56,7 +56,7 @@ function cekJawaban(input) {
     console.log(`Wwkwkwk, Anda Kurang beruntung!`);
     // tampilkanPertanyaan();
   }
-  return;
+  rl.prompt()
 }
 
 function pertanyaanSelanjutnya() {
