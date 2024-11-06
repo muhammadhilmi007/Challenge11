@@ -18,7 +18,7 @@ const rl = readline.createInterface({
 let pertanyaans = [];
 let cariIndex = 0;
 
-rl.prompt();
+//rl.prompt();
 
 function bacaPertanyaan() {
   try {
